@@ -7,7 +7,7 @@ def main():
 	index_obj = index(diretory)
 	index_obj.parse_documents()
 
-	index_obj.make_sorted_index()
+	# index_obj.make_sorted_index()
 
 	index_obj.save_index()
 

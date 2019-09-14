@@ -147,26 +147,6 @@ class index:
     					self.sorted_index[term_id_counter]['posting'][tuple_doc_id].append(tuple_term_pos)
 
     def save_index(self):
-    	# print(self.hashmap_index)
-    	# print(len(self.hashmap_index))
-    	# for jj in self.hashmap_index:
-    	# 	print('Term ID:' + str(jj))
-    	# 	print(self.hashmap_index[jj])
-
-    	# print(self.tuple_array)
-
-    	# self.make_sorted_index()
-
-
-    	# print(self.tuple_array)
-    	# print(len(self.hashmap_index))
-
-    	for jj in self.sorted_index:
-    		print('Term ID:' + str(jj))
-    		print(self.sorted_index[jj])
-    		
-
-    	# print(self.dictionary)
 
     	index_file = open('index.txt', 'w+')
     	term_id = 1
