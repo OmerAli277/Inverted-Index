@@ -160,31 +160,30 @@ class index:
 
     		first = True
     		previous_key = -1
+    		encode_key = -1
 
     		for key in temp_posting:
 
+    			positions = temp_posting[key]
     			if first == True:
     				first = False
-    				index_file.write(str(key))
     				previous_key = key
-
+    				encode_key = key
     			else: 
-    				index_file.write(str(key-previous_key))
+    				encode_key = key - previous_key
     				previous_key = key
 
-    			positions = temp_posting[key]
     			flag = True
     			previous_position = -1
+
     			for i in positions:
     				if flag == True:
     					flag = False
-    					index_file.write(',' + str(i))
+    					index_file.write(str(encode_key) + ',' + str(i) + ' ')
     					previous_position = i
     				else:
-    					index_file.write(',' + str(i-previous_position))
+    					index_file.write(str('0') +  ',' + str(i - previous_position) + ' ')
     					previous_position = i
-
-    			index_file.write(' ')
 
     		index_file.write('\n')
 
