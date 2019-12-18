@@ -22,3 +22,20 @@ In this project, python dictionary is used instead of the hashmap. The Single-pa
 
 ![alt text](https://github.com/OmerAli277/HelloWorld/blob/master/spimi.PNG "SPIMI")
 #### 3. Delta Encoding
+After the construction, index is stored in the index.txt which is zipped. The index.txt is containing the file position for each occurrence of each term in the collection. Each line contain the complete inverted list for a single term. Each line contain a list of DOCID,POSITION values. Each line of this file contain a TERMID followed by a space-separated list of properties as
+follows:<br/>
+347 1542 567 432,43 456,33 456,41<br/>
+o 347: TERMID<br/>
+o 1542: Total number of occurrences of the term in the entire corpus<br/>
+o 567: Total number of documents in which the term appears<br/>
+o 432: Document Id in which term appears<br/>
+o 43: Position of term in document 432<br/>
+In order to support more efficient compression, delta encoding is applied to the inverted list. The first DOCID for a term and the first POSITION for a document will be stored normally. Subsequent values stored as the offset from the prior value.
+Instead of encoding an inverted list like this:<br/>
+347 1542 567 432,43 456,33 456,41<br/>
+It is encoded like this:<br/>
+347 1542 567 432,43 24,33 0,8<br/>
+
+## read_index.py
+This file reads the index from index.txt and allocate the index into memory. The file accept the word as command line argument and search it into the index like following:<br/>
+$ ./read_index.py --term apple
