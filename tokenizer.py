@@ -1,9 +1,3 @@
-import sys
-
-path = sys.path
-temp = ['\\Users\\omerali\\AppData\\Local\\Programs\\Python\\Python37\\python37.zip', 'C:\\Users\\omerali\\AppData\\Local\\Programs\\Python\\Python37\\DLLs', 'C:\\Users\\omerali\\AppData\\Local\\Programs\\Python\\Python37\\lib', 'C:\\Users\\omerali\\AppData\\Local\\Programs\\Python\\Python37', 'C:\\Users\\omerali\\Desktop\\Semester # 7\\Information Retrieval\\Assignment 1 (inverted index)\\code\\venv', 'C:\\Users\\omerali\\Desktop\\Semester # 7\\Information Retrieval\\Assignment 1 (inverted index)\\code\\venv\\lib\\site-packages']
-path += temp
-
 import glob
 import re
 import pdb
